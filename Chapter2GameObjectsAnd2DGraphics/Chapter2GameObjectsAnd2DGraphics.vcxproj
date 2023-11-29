@@ -24,6 +24,7 @@
     <ProjectGuid>{123863fb-ae7d-409d-9527-c84368f81da3}</ProjectGuid>
     <RootNamespace>Chapter2GameObjectsAnd2DGraphics</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>Chapter02GameObjectsAnd2DGraphics</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
