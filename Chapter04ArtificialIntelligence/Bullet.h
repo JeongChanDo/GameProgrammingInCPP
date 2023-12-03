@@ -8,5 +8,5 @@ public:
 	void UpdateActor(float deltaTime) override;
 private:
 	class CircleComponent* mCircle;
-	float mLiveTIme;
+	float mLiveTime;
 };

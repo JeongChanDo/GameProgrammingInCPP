@@ -25,7 +25,21 @@ public:
 
 
 	const Vector2& GetPosition() const { return mPosition; }
+	void SetPosition(const Vector2& pos) { mPosition = pos; }
+	float GetScale() const { return mScale; }
+	void SetScale(float scale) { mScale = scale; }
+	float GetRotation() { return mRotation; }
+	void SetRotation(float rotation) { mRotation = rotation; }
 
+	Vector2 GetForward() const { return Vector2(Math::Cos(mRotation), -Math::Sin(mRotation)); }
+
+	State GetState() const { return mState; }
+	void SetState(State state) { mState = state; }
+
+	class Game* GetGame() { return mGame; }
+
+	void AddComponent(class Component* component);
+	void RemoveComponent(class Component* component);
 private:
 	State mState;
 
@@ -34,5 +48,5 @@ private:
 	float mRotation;
 
 	std::vector<class Component*> mComponents;
-	class Game* game;
+	class Game* mGame;
 };

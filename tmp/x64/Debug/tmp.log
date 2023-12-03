@@ -1,0 +1,3 @@
+﻿  Main02.cpp
+C:\Users\addinedu\Documents\GitHub\GameProgrammingInCPP\tmp\Main02.cpp(4,1): warning C4326: return type of 'main' should be 'int' instead of 'void'
+  tmp.vcxproj -> C:\Users\addinedu\Documents\GitHub\GameProgrammingInCPP\x64\Debug\tmp.exe

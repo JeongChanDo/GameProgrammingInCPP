@@ -18,12 +18,13 @@ public:
 	void RemoveActor(class Actor* actor);
 
 	void AddSprite(class SpriteComponent* sprite);
-	void RemoveSprite(class SpriteComponen* sprite);
+	void RemoveSprite(class SpriteComponent* sprite);
 
 	SDL_Texture* GetTexture(const std::string& fileName);
-
-
-
+	
+	class Grid* GetGrid() { return mGrid; }
+	std::vector<class Enemy*>& GetEnemies() { return mEnemies; }
+	class Enemy* GetNearestEnemy(const Vector2& pos);
 
 private:
 	void ProcessInput();
@@ -44,7 +45,7 @@ private:
 	bool mIsRunning;
 	bool mUpdatingActors;
 
-
-
-
+	std::vector<class Enemy*> mEnemies;
+	class Grid* mGrid;
+	float mNextEnemy;
 };

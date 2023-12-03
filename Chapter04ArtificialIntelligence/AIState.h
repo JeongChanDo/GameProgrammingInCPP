@@ -19,7 +19,7 @@ protected:
 class AIPatrol : public AIState
 {
 public:
-	AIPatrol(class AICOmponent* owner)
+	AIPatrol(class AIComponent* owner)
 		:AIState(owner)
 	{}
 
@@ -52,7 +52,8 @@ public:
 
 class AIAttack : public AIState
 {
-	AIAttack(class AICOmponent* owner)
+public:
+	AIAttack(class AIComponent* owner)
 		:AIState(owner)
 	{}
 
@@ -64,5 +65,4 @@ class AIAttack : public AIState
 	{
 		return "Attack";
 	}
-
 };

@@ -4,6 +4,7 @@
 
 class Tile : public Actor
 {
+public:
 	friend class Grid;
 	enum TileState
 	{
@@ -30,7 +31,7 @@ private:
 	bool mBlocked;
 
 	void UpdateTexture();
-	class SpriteComponnet* mSrpite;
+	class SpriteComponent* mSprite;
 	TileState mTileState;
 	bool mSelected;
 };

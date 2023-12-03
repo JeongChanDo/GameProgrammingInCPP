@@ -7,10 +7,7 @@ public:
 	Enemy(class Game* game);
 	~Enemy();
 	void UpdateActor(float deltaTime) override;
-	class CircleComponent* GetCircle()
-	{
-		return mCircle;
-	}
+	class CircleComponent* GetCircle(){ return mCircle; }
 private:
 	class CircleComponent* mCircle;
 };

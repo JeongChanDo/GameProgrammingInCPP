@@ -12,15 +12,15 @@ public:
 	void BuildTower();
 	
 	class Tile* GetStartTile();
-	class Tile GetEndTile();
+	class Tile* GetEndTile();
 
 	void UpdateActor(float deltaTime) override;
 
 private:
 	void SelectTile(size_t row, size_t col);
-	void UpdatePatchTile(class Tile* start);
+	void UpdatePathTiles(class Tile* start);
 	
-	class Tile* mSelectTile;
+	class Tile* mSelectedTile;
 	std::vector<std::vector<class Tile*>> mTiles;
 	
 	float mNextEnemy;
