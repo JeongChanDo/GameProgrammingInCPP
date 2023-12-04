@@ -1,5 +1,15 @@
-﻿  Asteroid.cpp
+﻿  Actor.cpp
+  Asteroid.cpp
+  CircleComponent.cpp
+  Component.cpp
   Game.cpp
+  Main.cpp
+  Math.cpp
+  MoveComponent.cpp
+  Random.cpp
+  Shader.cpp
+  SpriteComponent.cpp
+  Texture.cpp
   VertexArray.cpp
   Generating Code...
   Chapter05OpenGL.vcxproj -> C:\Users\addinedu\Documents\GitHub\GameProgrammingInCPP\x64\Debug\Chapter05OpenGL.exe
