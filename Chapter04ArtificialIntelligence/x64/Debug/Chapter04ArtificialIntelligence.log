@@ -1,1 +1,18 @@
-﻿
+﻿  Actor.cpp
+  AIComponent.cpp
+  AIState.cpp
+  Bullet.cpp
+  CircleComponent.cpp
+  Component.cpp
+  Enemy.cpp
+  Game.cpp
+  Grid.cpp
+  Main.cpp
+  Math.cpp
+  MoveComponent.cpp
+  NavComponent.cpp
+  SpriteComponent.cpp
+  Tile.cpp
+  Tower.cpp
+  Generating Code...
+  Chapter04ArtificialIntelligence.vcxproj -> C:\Users\addinedu\Documents\GitHub\GameProgrammingInCPP\x64\Debug\Chapter04ArtificialIntelligence.exe
