@@ -1,22 +1,7 @@
-﻿  Actor.cpp
-  CameraActor.cpp
-  CircleComponent.cpp
-  Component.cpp
-  Game.cpp
-  Main.cpp
-  Math.cpp
-  Mesh.cpp
-C:\Users\addinedu\Documents\GitHub\GameProgrammingInCPP\Chapter09Camera\Mesh.cpp(107,74): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\addinedu\Documents\GitHub\GameProgrammingInCPP\Chapter09Camera\Mesh.cpp(107,53): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\addinedu\Documents\GitHub\GameProgrammingInCPP\Chapter09Camera\Mesh.cpp(107,32): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\addinedu\Documents\GitHub\GameProgrammingInCPP\Chapter09Camera\Mesh.cpp(145,88): warning C4267: 'argument': conversion from 'size_t' to 'unsigned int', possible loss of data
-  MeshComponent.cpp
-  MoveComponent.cpp
-  PlaneActor.cpp
-  Renderer.cpp
-  Shader.cpp
-  SpriteComponent.cpp
-  Texture.cpp
-  VertexArray.cpp
+﻿  FPSCamera.cpp
+  FollowCamera.cpp
+  OrbitCamera.cpp
+  SplineCamera.cpp
   Generating Code...
+x64\Debug\SplineCamera.obj : warning LNK4042: object specified more than once; extras ignored
   Chapter09Camera.vcxproj -> C:\Users\addinedu\Documents\GitHub\GameProgrammingInCPP\x64\Debug\Chapter09Camera.exe

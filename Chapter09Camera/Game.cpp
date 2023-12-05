@@ -4,7 +4,10 @@
 #include "Actor.h"
 #include "SpriteComponent.h"
 #include "MeshComponent.h"
-#include "CameraActor.h"
+#include "FPSActor.h"
+#include "FollowActor.h"
+#include "OrbitActor.h"
+#include "SplineActor.h"
 #include "PlaneActor.h"
 
 Game::Game()
@@ -54,9 +57,21 @@ void Game::ProcessInput()
 	{
 		switch (event.type)
 		{
-		case SDL_QUIT:
-			mIsRunning = false;
-			break;
+			case SDL_QUIT:
+				mIsRunning = false;
+				break;
+			// this fires when a key's initially pressed
+			case SDL_KEYDOWN:
+				if (!event.key.repeat)
+				{
+					HandleKeyPress(event.key.keysym.sym);
+				}
+				break;
+			case SDL_MOUSEBUTTONDOWN:
+				HandleKeyPress(event.button.button);
+				break;
+			default:
+				break;
 		}
 	}
 
@@ -70,6 +85,34 @@ void Game::ProcessInput()
 		actor->ProcessInput(state);
 	}
 }
+
+void Game::HandleKeyPress(int key)
+{
+	switch (key)
+	{
+		case '1':
+		case '2':
+		case '3':
+		case '4':
+			ChangeCamera(key);
+			break;
+		case SDL_BUTTON_LEFT:
+		{
+			//get start point (in center of screen on near plane
+			Vector3 screenPoint(0.0f, 0.0f, 0.0f);
+			Vector3 start = mRenderer->Unproject(screenPoint);
+			screenPoint.z = 0.9f;
+			Vector3 end = mRenderer->Unproject(screenPoint);
+			mStartSphere->SetPosition(start);
+			mEndSphere->SetPosition(end);
+			break;
+		}
+		default:
+			break;
+	}
+}
+
+
 
 void Game::UpdateGame()
 {
@@ -183,7 +226,6 @@ void Game::LoadData()
 	a->SetScale(3.0);
 	mc = new MeshComponent(a);
 	mc->SetMesh(mRenderer->GetMesh("Assets/Sphere.gpmesh"));
-	mRenderer->GetMesh("Assets/Spherer.gpmesh");
 
 	// setup floor
 	const float start = -1250.0f;
@@ -207,8 +249,21 @@ void Game::LoadData()
 
 		a = new PlaneActor(this);
 		a->SetPosition(Vector3(start + i * size, -start + size, 0.0f));
+		a->SetRotation(q);
 	}
 
+	// forward/back wall
+	q = Quaternion::Concatenate(q, Quaternion(Vector3::UnitZ, Math::PiOver2));
+	for (int i = 0; i < 10; i++)
+	{
+		a = new PlaneActor(this);
+		a->SetPosition(Vector3(start - size, start + i * size, 0.0f));
+		a->SetRotation(q);
+
+		a = new PlaneActor(this);
+		a->SetPosition(Vector3(-start + size, start + i * size, 0.0f));
+		a->SetRotation(q);
+	}
 
 
 	mRenderer->SetAmbientLight(Vector3(0.2f, 0.2f, 0.2f));
@@ -216,9 +271,7 @@ void Game::LoadData()
 	dir.mDirection = Vector3(0.0f, -0.707f, -0.070f);
 	dir.mDiffuseColor = Vector3(0.78f, 0.88f, 1.0f);
 	dir.mSpecColor = Vector3(0.8f, 0.8f, 0.8f);
-
-	mCameraActor = new CameraActor(this);
-
+	
 
 	a = new Actor(this);
 	a->SetPosition(Vector3(-350.0f, -350.0f, 0.0f));
@@ -231,4 +284,74 @@ void Game::LoadData()
 	sc = new SpriteComponent(a);
 	sc->SetTexture(mRenderer->GetTexture("Assets/Radar.png"));
 
+
+	a = new Actor(this);
+	a->SetScale(2.0f);
+	mCrosshair = new SpriteComponent(a);
+	mCrosshair->SetTexture(mRenderer->GetTexture("Assets/Crosshair.png"));
+
+
+	//enable relative mouse mode for camera look
+	SDL_SetRelativeMouseMode(SDL_TRUE);
+	SDL_GetRelativeMouseState(nullptr, nullptr);
+
+
+	// diff cam type
+	mFPSActor = new FPSActor(this);
+	mFollowActor = new FollowActor(this);
+	mOrbitActor = new OrbitActor(this);
+	mSplineActor = new SplineActor(this);
+
+	ChangeCamera('1');
+
+
+	// Sphers for demonstrating unprojection
+	mStartSphere = new Actor(this);
+	mStartSphere->SetPosition(Vector3(10000.0f, 0.0f, 0.0f));
+	mStartSphere->SetScale(0.25f);
+	mc = new MeshComponent(mStartSphere);
+	mc->SetMesh(mRenderer->GetMesh("Assets/Sphere.gpmesh"));
+	mEndSphere = new Actor(this);
+	mEndSphere->SetPosition(Vector3(10000.0f, 0.0f, 0.0f));
+	mEndSphere->SetScale(0.25f);
+	mc = new MeshComponent(mEndSphere);
+	mc->SetMesh(mRenderer->GetMesh("Assets/Sphere.gpmesh"));
+	mc->SetTextureIndex(1);
+
+}
+
+void Game::ChangeCamera(int mode)
+{
+	//disable everything
+	mFPSActor->SetState(Actor::EPaused);
+	mFPSActor->SetVisible(false);
+	mCrosshair->SetVisible(false);
+	mFollowActor->SetState(Actor::EPaused);
+	mFollowActor->SetVisible(false);
+	mOrbitActor->SetState(Actor::EPaused);
+	mOrbitActor->SetVisible(false);
+	mSplineActor->SetState(Actor::EPaused);
+
+	// enable the camera specified by the mode
+	switch (mode)
+	{
+		case '1':
+		default:
+			mFPSActor->SetState(Actor::EActive);
+			mFPSActor->SetVisible(true);
+			mCrosshair->SetVisible(true);
+			break;
+		case '2':
+			mFollowActor->SetState(Actor::EActive);
+			mFollowActor->SetVisible(true);
+			break;
+		case '3':
+			mOrbitActor->SetState(Actor::EActive);
+			mOrbitActor->SetVisible(true);
+			break;
+		case '4':
+			mSplineActor->SetState(Actor::EActive);
+			mSplineActor->RestartSpline();
+			break;
+	}
 }

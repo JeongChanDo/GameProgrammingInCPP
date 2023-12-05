@@ -26,7 +26,7 @@ bool Mesh::Load(const std::string& fileName, Renderer* renderer)
 	std::ifstream file(fileName);
 	if (!file.is_open())
 	{
-		SDL_Log("File not found : Mesh &s", fileName.c_str());
+		SDL_Log("File not found : Mesh %s", fileName.c_str());
 		return false;
 	}
 

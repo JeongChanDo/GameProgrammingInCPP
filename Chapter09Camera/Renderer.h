@@ -37,6 +37,15 @@ public:
 	void SetAmbientLight(const Vector3& ambient) { mAmbientLight = ambient; }
 	DirectionalLight& GetDirectionalLight() { return mDirLight; }
 
+	//given a screen space point, unprojects it into world
+	// based on the current 3d view/projection matrices
+	//expected ranges:
+	// x = [-screenWidth/2, + screenWidth/2]
+	// y = [-screenHeight/2, +screenHeight/2]
+	// z = [0, 1 -- 0 is closer to cam, 1 is futher
+	Vector3 Unproject(const Vector3& screenPoint) const;
+	void GetScreenDirection(Vector3& outStart, Vector3& outDir) const;
+
 	float GetScreenWidth() const { return mScreenWidth; }
 	float GetScreenHeight() const { return mScreenHeight; }
 

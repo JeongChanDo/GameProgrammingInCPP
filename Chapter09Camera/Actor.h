@@ -35,9 +35,11 @@ public:
 
 	// 전방 벡터 구하기 위해 단위 벡터 x와 회전 쿼터니언 곱하여 구함
 	Vector3 GetForward() const { return Vector3::Transform(Vector3::UnitX, mRotation); }
+	//쿼터니언으로 단위 오른축 회전
+	Vector3 GetRight() const { return Vector3::Transform(Vector3::UnitY, mRotation); }
 
 	State GetState() const { return mState; }
-	void SetState(State state) { mState; }
+	void SetState(State state) { mState = state; }
 
 	class Game* GetGame() { return mGame; }
 

@@ -19,6 +19,7 @@ public:
 	class Renderer* GetRenderer() { return mRenderer; }
 private:
 	void ProcessInput();
+	void HandleKeyPress(int key);
 	void UpdateGame();
 	void GenerateOutput();
 	void LoadData();
@@ -33,5 +34,14 @@ private:
 	bool mIsRunning;
 	bool mUpdatingActors;
 
-	class CameraActor* mCameraActor;
+	//game specific code
+	class FPSActor* mFPSActor;
+	class FollowActor* mFollowActor;
+	class OrbitActor* mOrbitActor;
+	class SplineActor* mSplineActor;
+	class Actor* mStartSphere;
+	class Actor* mEndSphere;
+	class SpriteComponent* mCrosshair;
+
+	void ChangeCamera(int mode);
 };
