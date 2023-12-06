@@ -1,0 +1,273 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\Base">
+      <UniqueIdentifier>{5ad423e0-c649-4f8b-8adf-8ae6e37cde74}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Component">
+      <UniqueIdentifier>{4ef990be-87ab-4fbf-9b53-02658e0ba1bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\3D">
+      <UniqueIdentifier>{2076ae31-1251-4784-87ac-b652985b0e78}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Actor">
+      <UniqueIdentifier>{0a65b4d9-bf38-4d4d-ac25-e402e2569753}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Base">
+      <UniqueIdentifier>{58ad26fc-8503-4078-90d3-72aa447fa39a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Component">
+      <UniqueIdentifier>{f90fe67f-15da-4c40-9b60-dc7a515bf33a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\3D">
+      <UniqueIdentifier>{23b41024-4897-4098-8b6b-4f1bccd1d6a1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Actor">
+      <UniqueIdentifier>{2031e761-435f-473a-b37f-c0e27c582adf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Assets">
+      <UniqueIdentifier>{7292886d-463f-4680-9c5d-bad6459d1ad1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Shaders">
+      <UniqueIdentifier>{31437039-6e1a-40d3-a113-848728ac0b64}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Assets\Crosshair.png">
+      <Filter>Resource Files\Assets</Filter>
+    </Image>
+    <Image Include="Assets\Cube.png">
+      <Filter>Resource Files\Assets</Filter>
+    </Image>
+    <Image Include="Assets\Default.png">
+      <Filter>Resource Files\Assets</Filter>
+    </Image>
+    <Image Include="Assets\HealthBar.png">
+      <Filter>Resource Files\Assets</Filter>
+    </Image>
+    <Image Include="Assets\Plane.png">
+      <Filter>Resource Files\Assets</Filter>
+    </Image>
+    <Image Include="Assets\RacingCar.png">
+      <Filter>Resource Files\Assets</Filter>
+    </Image>
+    <Image Include="Assets\Radar.png">
+      <Filter>Resource Files\Assets</Filter>
+    </Image>
+    <Image Include="Assets\Rifle.png">
+      <Filter>Resource Files\Assets</Filter>
+    </Image>
+    <Image Include="Assets\Sphere.png">
+      <Filter>Resource Files\Assets</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Cube.gpmesh">
+      <Filter>Resource Files\Assets</Filter>
+    </None>
+    <None Include="Assets\Master Bank.bank">
+      <Filter>Resource Files\Assets</Filter>
+    </None>
+    <None Include="Assets\Master Bank.strings.bank">
+      <Filter>Resource Files\Assets</Filter>
+    </None>
+    <None Include="Assets\Plane.gpmesh">
+      <Filter>Resource Files\Assets</Filter>
+    </None>
+    <None Include="Assets\RacingCar.gpmesh">
+      <Filter>Resource Files\Assets</Filter>
+    </None>
+    <None Include="Assets\Rifle.gpmesh">
+      <Filter>Resource Files\Assets</Filter>
+    </None>
+    <None Include="Assets\Sphere.gpmesh">
+      <Filter>Resource Files\Assets</Filter>
+    </None>
+    <None Include="Shaders\BasicMesh.frag">
+      <Filter>Resource Files\Shaders</Filter>
+    </None>
+    <None Include="Shaders\BasicMesh.vert">
+      <Filter>Resource Files\Shaders</Filter>
+    </None>
+    <None Include="Shaders\Phong.frag">
+      <Filter>Resource Files\Shaders</Filter>
+    </None>
+    <None Include="Shaders\Phong.vert">
+      <Filter>Resource Files\Shaders</Filter>
+    </None>
+    <None Include="Shaders\Sprite.frag">
+      <Filter>Resource Files\Shaders</Filter>
+    </None>
+    <None Include="Shaders\Sprite.vert">
+      <Filter>Resource Files\Shaders</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Assets\LICENSE.txt">
+      <Filter>Resource Files\Assets</Filter>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Actor.h">
+      <Filter>Header Files\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Component.h">
+      <Filter>Header Files\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>Header Files\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Math.h">
+      <Filter>Header Files\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="CircleComponent.h">
+      <Filter>Header Files\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="MeshComponent.h">
+      <Filter>Header Files\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="MoveComponent.h">
+      <Filter>Header Files\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="SpriteComponent.h">
+      <Filter>Header Files\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Renderer.h">
+      <Filter>Header Files\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader.h">
+      <Filter>Header Files\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture.h">
+      <Filter>Header Files\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="VertexArray.h">
+      <Filter>Header Files\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="CameraActor.h">
+      <Filter>Header Files\Actor</Filter>
+    </ClInclude>
+    <ClInclude Include="PlaneActor.h">
+      <Filter>Header Files\Actor</Filter>
+    </ClInclude>
+    <ClInclude Include="Mesh.h">
+      <Filter>Header Files\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="FPSActor.h">
+      <Filter>Header Files\Actor</Filter>
+    </ClInclude>
+    <ClInclude Include="FPSCamera.h">
+      <Filter>Header Files\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="CameraComponent.h">
+      <Filter>Header Files\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="FollowActor.h">
+      <Filter>Header Files\Actor</Filter>
+    </ClInclude>
+    <ClInclude Include="FollowCamera.h">
+      <Filter>Header Files\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="OrbitActor.h">
+      <Filter>Header Files\Actor</Filter>
+    </ClInclude>
+    <ClInclude Include="OrbitCamera.h">
+      <Filter>Header Files\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="SplineActor.h">
+      <Filter>Header Files\Actor</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Actor.cpp">
+      <Filter>Source Files\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="Component.cpp">
+      <Filter>Source Files\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="Game.cpp">
+      <Filter>Source Files\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="Main.cpp">
+      <Filter>Source Files\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="Math.cpp">
+      <Filter>Source Files\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="CircleComponent.cpp">
+      <Filter>Source Files\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="MeshComponent.cpp">
+      <Filter>Source Files\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="MoveComponent.cpp">
+      <Filter>Source Files\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="SpriteComponent.cpp">
+      <Filter>Source Files\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="Mesh.cpp">
+      <Filter>Source Files\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="Renderer.cpp">
+      <Filter>Source Files\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader.cpp">
+      <Filter>Source Files\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture.cpp">
+      <Filter>Source Files\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="VertexArray.cpp">
+      <Filter>Source Files\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="CameraActor.cpp">
+      <Filter>Source Files\Actor</Filter>
+    </ClCompile>
+    <ClCompile Include="PlaneActor.cpp">
+      <Filter>Source Files\Actor</Filter>
+    </ClCompile>
+    <ClCompile Include="FPSActor.cpp">
+      <Filter>Source Files\Actor</Filter>
+    </ClCompile>
+    <ClCompile Include="CameraComponent.cpp">
+      <Filter>Source Files\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="FPSCamera.cpp">
+      <Filter>Source Files\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="FollowCamera.cpp">
+      <Filter>Source Files\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="FollowActor.cpp">
+      <Filter>Source Files\Actor</Filter>
+    </ClCompile>
+    <ClCompile Include="OrbitCamera.cpp">
+      <Filter>Source Files\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="OrbitActor.cpp">
+      <Filter>Source Files\Actor</Filter>
+    </ClCompile>
+    <ClCompile Include="SplineCamera.h">
+      <Filter>Header Files\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="SplineCamera.cpp">
+      <Filter>Source Files\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="SplineActor.cpp">
+      <Filter>Source Files\Actor</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
